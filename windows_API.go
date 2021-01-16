@@ -44,3 +44,7 @@ func MessageBoxPlain(title, caption string) int {
 	)
 	return MessageBox(NULL, caption, title, MB_OK)
 }
+
+func maxingFdsLimit() {
+	return	
+}
