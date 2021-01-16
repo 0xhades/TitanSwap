@@ -19,7 +19,12 @@ go run TitanSwap
 #local OS
 go build -ldflags "-s -w" -o TitanSwap titanswap
 
-#Windows
+#Windows 
+#change line 104 from
+#syscall.SetsockoptInt(int(fd), syscall.IPPROTO_TCP, syscall.TCP_NODELAY, 1)
+#to
+#syscall.SetsockoptInt(syscall.Handle(fd), syscall.IPPROTO_TCP, syscall.TCP_NODELAY, 1)
+
 GOOS=windows arch=amd64 go build -ldflags "-s -w" -o TitanSwap titanswap
 
 #linux
